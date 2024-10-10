@@ -1,0 +1,203 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 30px;
+    font-family: 'Georgia', serif; 
+}
+
+h3 {
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Georgia', serif; 
+}
+
+h4 {
+    color: #333;
+    font-size: 18px;
+    font-family: 'Georgia', serif; 
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.label-small {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.input-small {
+    font-size: 0.9rem;
+    width: 280px;
+    padding: 0.375rem 0.75rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background-color: #56d079;
+    color: #fff;
+    font-family: 'Roboto', sans-serif; 
+}
+
+    .btn:hover {
+        background-color: #218838;
+    }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .table th {
+        background-color: #28a745;
+        color: #fff;
+        padding: 10px;
+        position: relative;
+        font-family: 'Georgia', serif;
+    }
+
+        .table th a {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+            .table th a span {
+                margin-left: 5px;
+            }
+
+
+.descripcion-col {
+    width: 230px; 
+}
+
+
+.sort-asc::after {
+    content: "🔼";
+}
+
+.sort-desc::after {
+    content: "🔽";
+}
+
+.table td {
+    padding: 12px; 
+    border-bottom: 1px solid #ddd;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px; 
+    font-weight: normal;
+}
+
+.table tbody tr:hover {
+    background-color: #e8f5e9;
+}
+
+.mt-3 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #e9ecef;
+    color: #6c757d;
+    position: relative;
+    bottom: 0;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-info {
+    background-color: #6c35f4;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.btn-danger {
+    background-color: #f1370d;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}

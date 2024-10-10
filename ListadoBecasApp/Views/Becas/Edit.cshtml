@@ -1,0 +1,65 @@
+﻿@model ListadoBecasApp.Models.Beca
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="text-center" style="color: #28a745;">Editar Beca</h2>
+<hr />
+<div class="container mt-4 mb-5" style="max-width: 100%; padding: 0 15px;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Edit" class="border p-3 rounded shadow">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="IdBeca" />
+
+                <div class="form-group">
+                    <label asp-for="NombreBeca" class="control-label label-small">Nombre</label>
+                    <input asp-for="NombreBeca" class="form-control input-small" placeholder="Nombre de la Beca" />
+                    <span asp-validation-for="NombreBeca" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Descripcion" class="control-label label-small">Descripción</label>
+                    <input asp-for="Descripcion" class="form-control input-small" placeholder="Descripción de la Beca" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PorcentajeBeca" class="control-label label-small">Porcentaje de beca</label>
+                    <input asp-for="PorcentajeBeca" class="form-control input-small" placeholder="Porcentaje de la Beca" />
+                    <span asp-validation-for="PorcentajeBeca" class="text-danger">%</span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FechaInicio" class="control-label label-small">Fecha de inicio</label>
+                    <input asp-for="FechaInicio" type="date" class="form-control input-small" />
+                    <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FechaFin" class="control-label label-small">Fecha fin</label>
+                    <input asp-for="FechaFin" type="date" class="form-control input-small" />
+                    <span asp-validation-for="FechaFin" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IdCarrera" class="control-label label-small">Carrera</label>
+                    <select asp-for="IdCarrera" class="form-control input-small" asp-items="ViewBag.IdCarrera"></select>
+                    <span asp-validation-for="IdCarrera" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-5 d-flex justify-content-center">
+                    <input type="submit" value="Guardar" class="btn" style="background-color: #ffc107; color: #fff;" />
+                    <a asp-action="Administrations" class="btn btn-secondary">Volver a la lista</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

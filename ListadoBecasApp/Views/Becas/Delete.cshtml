@@ -1,0 +1,56 @@
+﻿@model ListadoBecasApp.Models.Beca
+
+@{
+    ViewData["Title"] = "Eliminar Beca";
+}
+
+<h2 class="text-center mb-5" style="color: #f1370d; margin-top: 2rem;">
+    ¿Estás seguro de que deseas eliminar esta beca?
+</h2>
+
+<div class="card shadow-sm p-4 mb-4 bg-white rounded mx-auto" style="max-width: 600px;">
+    <dl class="row">
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Nombre:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.NombreBeca)
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Descripción:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Porcentaje de beca:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.PorcentajeBeca) %
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Fecha de inicio:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Fecha fin:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.FechaFin)
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Carrera:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.IdCarreraNavigation.NombreCarrera)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="d-flex justify-content-center mt-4">
+        <input type="hidden" asp-for="IdBeca" />
+        <input type="submit" value="Eliminar" class="btn" style="background-color: #f1370d; color: white;" />
+        <a asp-action="Administrations" class="btn btn-secondary ms-3">Volver a la lista</a>
+    </form>
+</div>

@@ -1,0 +1,57 @@
+﻿@model ListadoBecasApp.Models.Beca
+
+@{
+    ViewData["Title"] = "Detalles de la Beca";
+}
+
+<div class="card shadow-sm p-4 mb-6 bg-white rounded mx-auto mt-5" style="max-width: 600px;">
+    <h2 class="card-title text-center" style="color: #6c35f4; font-weight:bolder">Detalle de la @Model.NombreBeca</h2>
+    <hr />
+    <dl class="row align-content-center">
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Nombre:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.NombreBeca)
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Descripción:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Porcentaje de beca:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.PorcentajeBeca) %
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Fecha de inicio:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Fecha fin:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.FechaFin)
+        </dd>
+        <dt class="col-sm-4 text-end" style="font-weight: bold;">
+            Carrera:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.IdCarreraNavigation.NombreCarrera)
+        </dd>
+    </dl>
+</div>
+
+<div class="d-flex justify-content-center mt-4">
+    <a asp-action="Edit" asp-route-id="@Model?.IdBeca" class="btn" style="background-color: #6c35f4; color: #ffffff;">
+        Editar
+    </a>
+    <a asp-action="Administrations" class="btn btn-secondary ms-3">
+        Volver a la lista
+    </a>
+</div>

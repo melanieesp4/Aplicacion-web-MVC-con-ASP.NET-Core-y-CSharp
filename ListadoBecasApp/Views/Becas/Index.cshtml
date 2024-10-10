@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ListadoBecasApp.Models.Beca>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado de becas</h1>
+
+<div class="container">
+    <form method="get" asp-action="Index">
+        <div class="form-group d-flex align-items-start">
+            <label for="carreraId" class="mr-2">Carrera:</label>
+            <select id="carreraId" name="carreraId" class="form-control mr-2" style="width: 180px; box-sizing: border-box;font-size: 15px;">
+                <option value="">Seleccione una carrera</option>
+                @foreach (var carrera in ViewBag.Carreras)
+                {
+                    <option value="@carrera.Value">@carrera.Text</option>
+                }
+            </select>
+            <button type="submit" class="btn btn-success">Consultar</button>
+        </div>
+    </form>
+    <div class="mt-3 d-flex align-items-center">
+        <h3 class="mr-2">Porcentaje de Beca:</h3>
+        <h4>@ViewBag.PorcentajeBeca %</h4>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th class="descripcion-col">Descripción</th>
+                <th>Carrera</th>
+                <th>% beca</th>
+                <th>Fecha inicio</th>
+                <th>Fecha Fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(ModelItem => item.IdBeca)</td>
+                    <td class="descripcion-col">
+                        @Html.DisplayFor(modelItem => item.NombreBeca)
+                    </td>
+                    <td class="descripcion-col">
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td class="descripcion-col">
+                        @if (item.IdCarreraNavigation != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.IdCarreraNavigation.NombreCarrera)
+                        }
+                        else
+                        {
+                            <span>No asignada</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PorcentajeBeca)%
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaFin)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
