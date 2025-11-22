@@ -1,4 +1,4 @@
-﻿@model ListadoBecasApp.Models.Beca
+﻿@model ListadoBecasApp.DTOs.BecaDto
 
 @{
     ViewData["Title"] = "Eliminar Beca";
@@ -44,7 +44,7 @@
             Carrera:
         </dt>
         <dd class="col-sm-8">
-            @Html.DisplayFor(model => model.IdCarreraNavigation.NombreCarrera)
+            @Html.DisplayFor(model => model.NombreCarrera)
         </dd>
     </dl>
 

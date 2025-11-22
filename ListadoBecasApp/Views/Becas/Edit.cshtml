@@ -1,4 +1,4 @@
-﻿@model ListadoBecasApp.Models.Beca
+﻿@model ListadoBecasApp.DTOs.BecaDto
 
 @{
     ViewData["Title"] = "Edit";
@@ -45,7 +45,11 @@
 
                 <div class="form-group">
                     <label asp-for="IdCarrera" class="control-label label-small">Carrera</label>
-                    <select asp-for="IdCarrera" class="form-control input-small" asp-items="ViewBag.IdCarrera"></select>
+                    <select asp-for="IdCarrera"
+                            asp-items="@(new SelectList(ViewBag.Carreras, "IdCarrera", "NombreCarrera"))"
+                            class="form-control">
+                        <option value="">Seleccione una carrera</option>
+                    </select>
                     <span asp-validation-for="IdCarrera" class="text-danger"></span>
                 </div>
 

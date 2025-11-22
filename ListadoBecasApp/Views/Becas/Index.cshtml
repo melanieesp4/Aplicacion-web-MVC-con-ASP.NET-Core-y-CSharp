@@ -1,4 +1,6 @@
-﻿@model IEnumerable<ListadoBecasApp.Models.Beca>
+﻿
+@model IEnumerable<ListadoBecasApp.DTOs.BecaDto>
+
 
 @{
     ViewData["Title"] = "Index";
@@ -14,9 +16,10 @@
                 <option value="">Seleccione una carrera</option>
                 @foreach (var carrera in ViewBag.Carreras)
                 {
-                    <option value="@carrera.Value">@carrera.Text</option>
+                    <option value="@carrera.IdCarrera">@carrera.NombreCarrera</option>
                 }
             </select>
+
             <button type="submit" class="btn btn-success">Consultar</button>
         </div>
     </form>
@@ -48,15 +51,16 @@
                         @Html.DisplayFor(modelItem => item.Descripcion)
                     </td>
                     <td class="descripcion-col">
-                        @if (item.IdCarreraNavigation != null)
+                        @if (!string.IsNullOrWhiteSpace(item.NombreCarrera))
                         {
-                            @Html.DisplayFor(modelItem => item.IdCarreraNavigation.NombreCarrera)
+                            @Html.DisplayFor(modelItem => item.NombreCarrera)
                         }
                         else
                         {
                             <span>No asignada</span>
                         }
                     </td>
+
                     <td>
                         @Html.DisplayFor(modelItem => item.PorcentajeBeca)%
                     </td>

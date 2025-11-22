@@ -1,4 +1,6 @@
-﻿@model IEnumerable<ListadoBecasApp.Models.Beca>
+﻿
+@model IEnumerable<ListadoBecasApp.DTOs.BecaDto>
+
 
 @{
     ViewData["Title"] = "Administrations";
@@ -34,7 +36,7 @@
                 <tr>
                     <td>@Html.DisplayFor(modelItem => item.NombreBeca)</td>
                     <td>@Html.DisplayFor(modelItem => item.PorcentajeBeca) %</td>
-                    <td>@(item.IdCarreraNavigation != null ? item.IdCarreraNavigation.NombreCarrera : "Sin Carrera")</td>
+                    <td>@(string.IsNullOrWhiteSpace(item.NombreCarrera) ? "Sin Carrera" : item.NombreCarrera)</td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.IdBeca" class="btn btn-warning" title="Editar">
                             <i class="fas fa-pencil-alt"></i>
